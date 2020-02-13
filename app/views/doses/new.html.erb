@@ -1,0 +1,17 @@
+<div class="container mt-3">
+  <div class="row">
+    <div class="col">
+      <h1>Add a dose to <%= @cocktail.name %></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= simple_form_for [@cocktail, @dose] do |f| %>
+        <%= f.input :amount %>
+        <%= f.input :description, collection: Dose::DESCRIPTION %>
+        <%= f.association :ingredient  %>
+        <%= f.submit "Add a dose to your cocktail", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
