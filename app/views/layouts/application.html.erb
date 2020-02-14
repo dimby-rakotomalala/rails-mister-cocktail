@@ -18,7 +18,9 @@
     <% if !current_page?(root_path) %>
       <div class="content-page">
         <%= yield %>
-        <%= render "components/footer" %>
+        <% if !current_page?(cocktails_path) %>
+          <%= render "components/footer" %>
+        <% end %>
       </div>
     <% else %>
       <%= yield %>
