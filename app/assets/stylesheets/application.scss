@@ -11,3 +11,13 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+.content-page {
+  margin-top: 5rem !important
+}
+
+body {
+  background-image: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url(https://static1.villaschweppes.com/articles/1/49/09/1/@/352763-le-cocktail-gimlet-opengraph_1200-2.jpeg);
+  background-size:cover;
+  color: white;
+}

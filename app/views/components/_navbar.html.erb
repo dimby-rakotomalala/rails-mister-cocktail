@@ -1,16 +1,14 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <strong><%= link_to "Mister Cocktail", cocktails_path, class: "navbar-brand" %></strong>
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+  <strong><%= link_to "Mister Cocktail", root_path, class: "navbar-brand" %></strong>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <% unless current_page?(cocktails_path) %>
-        <li class="nav-item active">
-          <%= link_to "Home", cocktails_path, class: "nav-link" %>
-        </li>
-      <% end %>
+      <li class="nav-item">
+        <%= link_to "Cocktail", cocktails_path, class: "nav-link" %>
+      </li>
       <li class="nav-item">
         <%= link_to "Ingredients", ingredients_path, class: "nav-link" %>
       </li>

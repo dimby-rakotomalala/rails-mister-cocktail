@@ -9,7 +9,14 @@
     <div class="col">
       <ul>
       <% @ingredients.each do |ingredient| %>
-        <li><%= ingredient.name %> - <%= link_to "Edit", edit_ingredient_path(ingredient) %></li>
+        <li><%= ingredient.name %>
+        <%= link_to edit_ingredient_path(ingredient) do %>
+          <i class="fas fa-edit"></i>
+        <% end %>
+        <%= link_to ingredient_path(ingredient), method: :delete, data: {confirm: 'Are you sure?'} do %>
+          <i class="fas fa-trash-alt"></i>
+        <% end %>
+        </li>
       <% end %>
       </ul>
     </div>

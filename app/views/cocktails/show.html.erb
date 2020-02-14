@@ -1,17 +1,29 @@
 <div class="container mt-3">
   <div class="row">
-    <div class="col d-flex justify-content-between align-items-center">
+    <div class="col d-flex align-items-center">
       <h1><%= @cocktail.name %></h1>
-      <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+      <%= link_to edit_cocktail_path(@cocktail), class: "ml-3" do %>
+        <i class="fas fa-edit"></i>
+      <% end %>
+      <%= link_to cocktail_path(@cocktail), method: :delete, data: {confirm: 'Are you sure?'}, class: "ml-3" do %>
+        <i class="fas fa-trash-alt"></i>
+      <% end %>
+      <!-- <div>
+        <%#= link_to "Edit cocktail", edit_cocktail_path(@cocktail), class: "btn btn-secondary" %>
+        <%#= link_to "Add dose", new_cocktail_dose_path(@cocktail), class: "btn btn-primary" %>
+      </div> -->
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <ul>
+      <ul class="cocktail-list-dose">
       <% @cocktail.doses.each do |dose| %>
         <li><%= dose.amount %> <%= dose.description %> of <%= dose.ingredient.name %></li>
       <% end %>
       </ul>
+      <%= link_to new_cocktail_dose_path(@cocktail) do %>
+        <i class="fas fa-plus"></i> Add a dose
+      <% end %>
     </div>
   </div>
 </div>
